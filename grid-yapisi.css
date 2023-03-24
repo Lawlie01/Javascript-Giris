@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+/* Grid, webin iskelet yapısını oluşturur. Temelde Row(satır) ve Column(sütun) olarak adlandırılan yatay ve dikey kılavuz çizgilerden oluşuyor. Bu çizgileri referans alarak web içinde kullanılacak elementlerin yerleşimi sağlanıyor.grid özelliği sayfayı orantılı bir şekilde parçalara bölmemizi  */
+/* Grid Line: Yatay ya da dikey çizgiler olarak da düşünebilirsiniz. Numara ile adlandırılırlar.
+    Grid Container: Row, column, cell gibi yapıların oluşumunu sağlayan ana kutu.
+    Grid Row: Yatay kısımlardan oluşan yapılardır.
+    Grid Cell: Gridin en küçük birimidir. 4 tane grid line arasında bulunur.
+    Grid Column: Dikey kısımlardan oluşan yapılardır.
+    Grid Area: Birçok birimden(grid cell) oluşan yapıdır.
+    Grid Gap: Column ya da row arasındaki boşluklardır.
+    Repeat(): Tek tek columns ya da row lara px vermek yerine repeat(3, 150px); kodu ile tek hamlede yapabiliriz. Virgülden öncesi kaç kez tekrarlanacağı, virgülden sonrası da boyutlandırmayı ifade ediyor.
+    fr(fraction): Kullanılabilinir alanı ifade ediyor. Yani bir 900px'lik bloğumuz olduğunu düşünelim. bunu eşit şekilde parçalara bölüyor. Örnek "grid-template-columns: fr1 fr1; yani 2 eşit parşaya 450px 450px olarak böldü. Şöyle düşünebilirsiniz. total genişliği fr değerine göre sığdırıyor. Yani toplam genişliği düşünüp px hesabı yaparak itemlara ona göre değerler vermenize gerek kalmıyor.
+    Naming Grid Areas: Klasik display: grid ve grid-template-columns & grid-template-rows yapımızı oluşturduktan sonra alanımız için template oluşturuyoruz.
+    grid-template-areas: "header header header"
+                     " aside main main"
+                     "aside item-1 item-2";
+    Her column ve row için isimleri verdikten sonra birer birer bu isimleri de bulunan alanlara ekliyoruz.
+    . (nokta) : Boş bir cell anlamına geliyor ve template’inizde . koyduğunuz yer boş kalıyor.
+*/
+.grid-container{
+    width: 900px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(3, 150px); kısa yöntem*/
+    grid-template-rows: 150px 150px 150px;
+    gap: 25px;
+    background-color: lightgray;
+    padding: 10px;
+    grid-template-areas: "header header header" 
+                         "aside main main" 
+                         "aside item-1 item-2";
+}
+
+.grid-item{
+    font-size: 30px;
+    text-align: center;
+}
+
+.item-1{
+    background-color: #581845;
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.item-2{
+    background-color: #900c3f;
+    font-family: 'Press Start 2P', cursive;
+    grid-column: span 3;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.item-3{
+    background-color: #c70039;
+    grid-row: span 2;
+}
+
+.item-4{
+    background-color: #ff5733;
+}
+
+.item-5{
+    background-color: #ffc30f;
+}
+
+.item-6{
+    background-color: #ffeead;
+}
+

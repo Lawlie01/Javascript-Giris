@@ -1,43 +1,81 @@
 // ********** Veri Turunu Ogrenmek ve Veri Turu Donusumleri **********
 
 //  veri turunu ogrenmek typeof:
-let= price = 111
+let = price = 111
 let stringPrice = "111"
-let hasPassword= true
+let hasPassword = true
 
 console.log(
     "price: ",
-    typeof(price)
+    typeof (price)
 )
 console.log(
     "stringPrice: ",
-    typeof(stringPrice)
+    typeof (stringPrice)
 )
 console.log(
     "hasPassword: ",
-    typeof(hasPassword)
+    typeof (hasPassword)
 )
 
 
-// string(metinsel) bilgileri int ve float'a donusturmek ParseInt ve ParseFloat sadece ibaremin içerisindeki rakamsal kısmı almamı sağlar.
+// string(metinsel) bilgileri int ve float'a donusturmek ParseInt ve ParseFloat sadece ibaremin içerisindeki rakamsal kısmı almamı sağlar. parseInt( ) veriyi integer türüne yani tamsayı türüne dönüştürür. parseFloat( ) ise ondalıklı sayıya dönüştürme işlemi yapar.
 
 let number1 = "11"
 number1 = parseInt(number1)
-console.log("number1: ", number1, typeof(number1))
+console.log("number1: ", number1, typeof (number1))
 
 let number2 = "11px"
 number2 = parseInt(number2)
-console.log("number2: ", number2, typeof(number2))
+console.log("number2: ", number2, typeof (number2))
 
 let number3 = "11.1"
 number3 = Number(number3)
-console.log("number3: ", number3, typeof(number3))
+console.log("number3: ", number3, typeof (number3))
 
 let number4 = "11.4px"
 number4 = parseFloat(number4)
-console.log("number4: ", number4, typeof(number4))
+console.log("number4: ", number4, typeof (number4))
 
 // number veri tipinden string'e donusturmek
 let number5 = 55
 number5 = number5.toString()
-console.log(number5, typeof(number5))
+console.log(number5, typeof (number5))
+
+// ------------------------------------------------------------------- //
+// Parametresiz fonksiyonlar -- // prompt komutu kullanıcıya soru sorup girilen bilgiye işlem yapan  o bilgiyi döndüren bir metoddur.
+
+// function topla(){
+//     let kullaniciSayisi1 = prompt("Lütfen ilk sayıyı giriniz:", "");
+//     let kullaniciSayisi2 = prompt("Lütfen ikinci sayıyı giriniz:", "");
+//     alert(parseInt(kullaniciSayisi1) + parseInt(kullaniciSayisi2));
+// }
+
+// topla();
+
+// parametreli fonksiyonkar
+
+// function topla(ilkSayi, ikinciSayi){
+//     alert(Number(ilkSayi) + Number(ikinciSayi));
+// }
+
+// topla(4, 5);
+
+
+// Return komutu ile eğer çalıştırmak istemediğimiz komutlar var ise direkt o fonksiyondan çıkışı sağlar ve diğer fonksiyonlara devam eder.
+// function farkHesaplama(ilk, son){
+//     if(ilk<son){
+//         alert("İlk Değer ikinci değerden küçüktür.")
+//         return;
+//     } else {
+//         alert(ilk - son);
+//     }
+// }
+
+// farkHesaplama(15, 20);
+
+// eval komutu değişken türünü algılayıp convert işlemini yapmasını sağlar.
+
+let a = 12;
+let b = "8";
+console.log(a + eval(b));

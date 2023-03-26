@@ -1,4 +1,5 @@
 // **************** Template Literals Kullanimi ****************
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
 
 let userName = "Ahmet"
 const DOMAIN = "Leonhart.com"

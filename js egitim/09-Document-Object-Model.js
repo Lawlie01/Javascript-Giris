@@ -13,6 +13,4 @@ console.log(document.baseURI)
 
 document.body.style.backgroundColor = "tomato";
 
-let konum = document.getElementById("sehir").innerHTML;
-alert(konum);
 

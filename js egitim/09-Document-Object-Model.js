@@ -12,5 +12,3 @@ console.log(document.URL)
 console.log(document.baseURI)
 
 document.body.style.backgroundColor = "tomato";
-
-

@@ -11,11 +11,13 @@
 
 //  Ornekler
 
-// function istek() {
+//  function istek() {
 
-//     let kelime = prompt("Bir değer giriniz", "Lütfen sadece kelime giriniz..")
-//     document.write(kelime)
-// }
+//      let kelime = prompt("Bir değer giriniz", "Lütfen sadece kelime giriniz..")
+//      document.write(kelime)
+//  }
+
+//  istek();
 
 // ----------------------------------------------
 
@@ -41,4 +43,4 @@ let y = prompt("Lütfen ikinci sayıyı giriniz:", "");
 
 x = parseInt(x);
 y = parseInt(y);
-alert("Toplam....:" + (x+y));
+alert("Toplam....:" + (x + y));

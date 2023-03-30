@@ -1,4 +1,7 @@
 //  Liste icerisindeki ogeye erismek ve yeni oge eklemek ************
+// https://www.w3schools.com/js/js_htmldom.asp
+// http://www.webcebir.com/170-javascript-dom-erisim-yontemleri-dersi.html
+// https://www.yazilimkodlama.com/javascript/javascript-ile-listeye-ogeler-ekleyin/
 
 let lastChild =document.querySelector("ul.liste>li:last-child")
 lastChild.innerHTML = "son oge degisti"

@@ -1,5 +1,5 @@
 // ********* number *********
-//  number veri turutanimlamak:
+//  number veri turutanimlamak: https://tr.wikibooks.org/wiki/JavaScript/Operatörler
 let price = 100
 let tax = 0.18
 let priceTax = price * tax

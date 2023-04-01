@@ -60,3 +60,16 @@ let randomSayi = Math.floor(Math.random() * 10);
 
 // Formül: vki = kg/(m * m)
 
+
+// function vkiHesapla(weight, height) {
+//     let vki;
+//     if (vki < 18.5) return alert(`Vucut kitle indexsiniz:  ${vki}, degerleriniz dusuktur`);
+
+//     if (vki >= 18.5 && vki <= 24.9) return alert(`Vucut kitle indexsiniz:  ${vki}, normal degerdesiniz`);
+
+//     if (vki >= 25.0 && vki <= 29.9) return alert(`Vucut kitle indexsiniz:  ${vki}, kilolusunuz`);
+//     if (vki > 30) return alert(`Vucut kitle indexsiniz:  ${vki}, Asiri kilolusunuz`);
+//     return alert("Girdiginiz degerleri kontrol ediniz");
+// };
+
+// vkiHesapla(weight, height);

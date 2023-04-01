@@ -1,11 +1,19 @@
 // ************** IF ELSE Kosul Yapisi **************
 
+let userName = prompt("Kullanici adinizi giriniz: ");
+// eger kullanici bilgisi varsa ekrana yazdir.
+// eger (username.length > 0) {console.log(username)} degilse {console.log("Bilgi yok")}
+// if (username.length > 0) {console.log(username)}
 
-
-
-
-
-
+if (userName.length > 3) { // if kismi her zaman true ise calisir
+    console.log(`Kullanici Bilginiz ${userName}`)
+}
+else if(userName.length == 0){
+    console.log("Bilgi Yok")
+}
+else if(userName.length <= 3){
+    console.log("Minimum 4 karakter girmelisiniz!")
+}
 
 
 // ornek buyuktur kucuktur.

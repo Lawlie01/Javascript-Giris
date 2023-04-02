@@ -1,56 +1,56 @@
 // ************** IF ELSE Kosul Yapisi **************
 
-let userName = prompt("Kullanici adinizi giriniz: ");
+// let userName = prompt("Kullanici adinizi giriniz: ");
 // eger kullanici bilgisi varsa ekrana yazdir.
 // eger (username.length > 0) {console.log(username)} degilse {console.log("Bilgi yok")}
 // if (username.length > 0) {console.log(username)}
 
-if (userName.length > 3) { // if kismi her zaman true ise calisir
-    console.log(`Kullanici Bilginiz ${userName}`)
-}
-else if(userName.length == 0){
-    console.log("Bilgi Yok")
-}
-else if(userName.length <= 3){
-    console.log("Minimum 4 karakter girmelisiniz!")
-}
+//  if (userName.length > 3) { // if kismi her zaman true ise calisir
+//      console.log(`Kullanici Bilginiz ${userName}`)
+//  }
+//  else if(userName.length == 0){
+//      console.log("Bilgi Yok")
+//  }
+//  else if(userName.length <= 3){
+//      console.log("Minimum 4 karakter girmelisiniz!")
+//  }
 
 
 // ornek buyuktur kucuktur.
-let x = 25;
-let y = 24;
+// let x = 25;
+// let y = 24;
 
-if (x > y) {
-    console.log(x + " Sayisi " + y + " sayisindan buyuktur.")
-}
+// if (x > y) {
+//     console.log(x + " Sayisi " + y + " sayisindan buyuktur.")
+// }
 
-else {
-    console.log(x + " Sayisi " + y + " sayisindan kucuktur.")
-};
+// else {
+//     console.log(x + " Sayisi " + y + " sayisindan kucuktur.")
+// };
 
 // Not ortalama ornegi
-let ogrVizeNot = 70;
-let ogrFinalNot = 95;
-let ogrOrtalama = (ogrVizeNot * 0.3) + (ogrFinalNot * 0.7);
+// let ogrVizeNot = 70;
+// let ogrFinalNot = 95;
+// let ogrOrtalama = (ogrVizeNot * 0.3) + (ogrFinalNot * 0.7);
 
-if (ogrOrtalama >= 0 && ogrOrtalama <= 30) {
-    console.log("Not Ortalamaniz: " + ogrOrtalama + " Kaldiniz(FF).");
-}
+// if (ogrOrtalama >= 0 && ogrOrtalama <= 30) {
+//     console.log("Not Ortalamaniz: " + ogrOrtalama + " Kaldiniz(FF).");
+// }
 
-else if (ogrOrtalama >= 31 && ogrOrtalama <= 49) {
-    console.log("Not Ortalamaniz: " + ogrOrtalama + " DC - Kosullu.")
-}
+// else if (ogrOrtalama >= 31 && ogrOrtalama <= 49) {
+//     console.log("Not Ortalamaniz: " + ogrOrtalama + " DC - Kosullu.")
+// }
 
-else if (ogrOrtalama >= 50 && ogrOrtalama <= 84) {
-    console.log("Not Ortalamaniz: " + ogrOrtalama + " CC - Geçtiniz.")
-}
+// else if (ogrOrtalama >= 50 && ogrOrtalama <= 84) {
+//     console.log("Not Ortalamaniz: " + ogrOrtalama + " CC - Geçtiniz.")
+// }
 
-else if (ogrOrtalama >= 85 && ogrOrtalama <= 100) {
-    console.log("Not Ortalamaniz: " + ogrOrtalama + " AA - Geçtiniz.")
-}
+// else if (ogrOrtalama >= 85 && ogrOrtalama <= 100) {
+//     console.log("Not Ortalamaniz: " + ogrOrtalama + " AA - Geçtiniz.")
+// }
 
 // Tahmin oyunu
-let randomSayi = Math.floor(Math.random() * 10);
+// let randomSayi = Math.floor(Math.random() * 10);
 
 // Girdigimiz sayiyi aklinda tutmasi icin prompt degiskene atanir
 
@@ -81,3 +81,15 @@ let randomSayi = Math.floor(Math.random() * 10);
 // };
 
 // vkiHesapla(weight, height);
+
+// sayi = prompt("Bir Sayi Giriniz: ");
+
+// if (sayi > 0) {
+//     console.log("Girilen sayi pozitiftir.");
+// }
+// else if(sayi<0){
+//     console.log("Girilen sayi negatiftir.");
+// }
+// else if(sayi==0){
+//     console.log("Girilen sayi sifir degerine esittir.");
+// };

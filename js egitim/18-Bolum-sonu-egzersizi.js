@@ -1,0 +1,1 @@
+//  ***************** Kosullarla calismak bolum sonu egzersizi *****************

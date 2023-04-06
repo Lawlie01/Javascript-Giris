@@ -16,7 +16,7 @@ function tarihSaat() {
     let min = date.getMinutes();
     let sec = date.getSeconds();
 
-     let dsaat = hour + ":" + ((min < 10) ? '0' : '') + min + ":" + ((sec < 10) ? '0' : '') + sec + " " + gunler[gun];
+     let dsaat = ((hour<10) ? '0' : '') + hour + ":" + ((min < 10) ? '0' : '') + min + ":" + ((sec < 10) ? '0' : '') + sec + " " + gunler[gun];
 
 document.getElementById("myClock").innerHTML = dsaat;
 }

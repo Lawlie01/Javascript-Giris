@@ -1,4 +1,5 @@
 
+
 let firstName = prompt("Adınızı Giriniz: ");
 let showName = document.querySelector('#myName')
 showName.innerHTML = firstName;

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+* {
+  box-sizing: border-box;
+}
 
 body {
   background: black;
@@ -10,27 +13,24 @@ body {
 
 .clock {
   position: relative;
-  text-align: center;
   color: #e98208;
-  font-size: 35px;
+  font-size: 2rem;
   font-family: 'Press Start 2P', cursive;
   letter-spacing: 7px;
 }
 
 .text1 {
   position: relative;
-  text-align: center;
   color: #e98208;
-  font-size: 30px;
+  font-size: 2rem;
   font-family: 'Press Start 2P', cursive;
   letter-spacing: 7px;
 }
 
 .text2 {
   position: relative;
-  text-align: center;
   color: #e98208;
-  font-size: 25px;
+  font-size: 1.5rem;
   font-family: 'Press Start 2P', cursive;
   letter-spacing: 7px;
   margin-right: 100px;
@@ -43,7 +43,6 @@ img {
 }
 
 .blink {
-  height: 50px;
   margin: 50px auto;
   animation-name: blinker;
   animation-duration: 1s;
@@ -74,5 +73,17 @@ img {
 
   100% {
     opacity: 1.0;
+  }
+}
+
+@media(max-width : 33rem){
+  .text-center {
+    font-size: 14px;
+  }
+  .blink{
+    font-size: 25px;
+  }
+  .clock{
+    font-size: 20px;
   }
 }

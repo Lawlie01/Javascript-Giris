@@ -1,8 +1,14 @@
-
-
 // Fonksiyon nedir?
 // Fonksiyonlar adından anlaşılacağı gibi belli bir amacı gerçekleştirmek için oluşturulmuş yapılardır. Koda işlevsellik katmak için bunu sık sık kullanırız.
 
+
+//  ilk fonksiyonumuzu tanimlamak:
+
+function hello(){
+    console.log("Merhaba")
+}
+
+hello();
 
 
 // function printHello(name) {
@@ -75,9 +81,9 @@
 
 // Fonksiyon Bildirimi
 
-function mesajVer(ad, soyad){
-    alert(`Merhabalar ${ad} ${soyad}!!`);
-}
+// function mesajVer(ad, soyad){
+//     alert(`Merhabalar ${ad} ${soyad}!!`);
+// }
 
 // mesajVer("Lawlie", "Leonhart", "Mr."); /* çıktı: Merhaba Arturo Kelesoglu (Bu örnekte parametrelere geçilen argüman sayısı 3'tür(Arturo, Kelesoglu, Mr.). Parametre sayısı ise 2'dir(ad,soyad). Bu yüzden fazlalıklar(Mr.) önemsenmez.*/
 // mesajVer("Lawlie"); /* çıktı: Merhaba Arturo undefined (Bu örnekte parametrelere geçilen argüman sayısı 1'dir.(Arturo). Parametre sayısı ise 2'dir(ad,soyad). Bu yüzden eksiklikler undefined döner. */
@@ -85,23 +91,23 @@ function mesajVer(ad, soyad){
 
 // Geri donus degeri
 
-function topla(sayi1, sayi2){
-    return sayi1 + sayi2;
-};
+// function topla(sayi1, sayi2){
+//     return sayi1 + sayi2;
+// };
 
-var sonuc = topla(10,20);
+// var sonuc = topla(10,20);
 
-function carp(sayi1, sayi2){
-    return sayi1 * sayi2;
-};
+// function carp(sayi1, sayi2){
+//     return sayi1 * sayi2;
+// };
 
-result=carp(10,20);
+// result=carp(10,20);
 
-var ekle = function topla(sayi1, sayi2) {
-    return sayi1 + sayi2;
-};
+// var ekle = function topla(sayi1, sayi2) {
+//     return sayi1 + sayi2;
+// };
 
-var sonuc1 = ekle(10,20); 
-var sonuc2 = topla(10,20); // geçersiz
+// var sonuc1 = ekle(10,20); 
+// var sonuc2 = topla(10,20); // geçersiz
 
 // arrow fanction

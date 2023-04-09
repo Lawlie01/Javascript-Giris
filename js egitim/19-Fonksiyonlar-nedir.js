@@ -129,4 +129,12 @@ hello(); // calistir
 // var sonuc1 = ekle(10,20);
 // var sonuc2 = topla(10,20); // geçersiz
 
-// arrow fanction
+// arrow function
+// Fonksiyon yaratmanın bir diğer yolu ise ES6 ile birlikte hayatımıza giren, daha okunabilir daha basit bir syntax yapısına sahip olan arrow functions yapısıdır.
+
+let func = (param1, param2, param3) => expression; //ornek bu kod bloğu basitçe, bir param1,param2,param3 parametrelerini alan ve sağ taraftaki ifadeyi değerlendirip sonucunu döndüren bir fonksiyon oluşturur.
+
+
+const carpim = (sayi1, sayi2) => sayi1 * sayi2;
+
+console.log(carpim(3, 5));

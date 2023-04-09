@@ -4,11 +4,30 @@
 
 //  ilk fonksiyonumuzu tanimlamak:
 
-function hello(){
-    console.log("Merhaba")
+function helloWorld() {
+    console.log("Hello World")
 }
 
-hello();
+
+function hello() {
+    console.log("Merhaba")
+    helloWorld()
+}
+
+
+// hata alabiliriz...
+// function userCheck(){
+//     if (userName && age >= 18) {
+//         info.innerHTML = "Ehliyet Alabilir."
+//     } else if (!userName) {
+//         info.innerHTML = "Kullanici Adi Girmediniz!"
+//     } else if (!(age >= 18)) {
+//         info.innerHTML = "Yas bilginiz yok veya 18 yasindan kucuksunuz!"
+//     }
+    
+// }
+
+hello(); // calistir
 
 
 // function printHello(name) {
@@ -36,7 +55,7 @@ hello();
 
 // function multiplication() {
 //     return sayi3 * sayi5;
-// } //Burada hata alıyoruz: bunun nedeni başka bir fonksiyonun içinde tanımlı olan sayi3 lokal değişkenini kapsamı dışında 
+// } //Burada hata alıyoruz: bunun nedeni başka bir fonksiyonun içinde tanımlı olan sayi3 lokal değişkenini kapsamı dışında
 //kullanmaya çalışmamız. sayi1 değişkeni ise global olduğundan burada kullanılabilir
 
 // Callback Fonksiyonlar
@@ -107,7 +126,7 @@ hello();
 //     return sayi1 + sayi2;
 // };
 
-// var sonuc1 = ekle(10,20); 
+// var sonuc1 = ekle(10,20);
 // var sonuc2 = topla(10,20); // geçersiz
 
 // arrow fanction

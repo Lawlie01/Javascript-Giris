@@ -6,10 +6,36 @@
 // 3: Mumkunse Fonksiyonun Bagimliliklarini Azaltmak Gerekir
 
 
+let firstName = "Lawliett"
 
+function greetings(firstName = "", lastName = "") { // default parametre aliyor..
+    // console.log(`Merhaba ${firstName ? firstName : ""}`) farkli bir yontem
+    // console.log(`Merhaba ${firstName}`)
+    console.log(`Merhaba ${firstName} ${lastName}`)
+}
 
+console.log(firstName) // degiskenle ilgili bilgi var
+greetings(); // fonksiyona parametre gondermedik??
+greetings("Leonhart")
 
+function greetings2(firstName, lastName) {
+    let info = `Merhaba ${firstName} ${lastName}`
+    return info;
+}
 
+let greetingsInfo = greetings2("Ad", "Soyad");
+// let info =  "Deneme" // ????
+console.log(greetingsInfo)
+
+function domIdWriteInfo(id, info){
+    let domObject = document.querySelector(`#${id}`)
+    domObject.innerHTML = info
+}
+
+let htmlInfo = `<span style="color:red">Color REDDD</span>`
+
+domIdWriteInfo('greeting', htmlInfo)
+domIdWriteInfo('info', greetings2("Lawlie", "Leonhart"))
 
 
 // Ornekler
@@ -57,7 +83,8 @@ function carpma(a1, a2) {
     return a1 * a2;
 }
 
-var alan1= daireAlaniHesaplama3(5); // 5 ve 6 argumanlari icin dairelerin alanlari hesaplandi.
+var alan1 = daireAlaniHesaplama3(5); // 5 ve 6 argumanlari icin dairelerin alanlari hesaplandi.
 var alan2 = daireAlaniHesaplama3(6);
-var donenSonuc3 = carpma( alan1, alan2); // Hesaplanan alanlar arguman olarak verildi.
-console.log("Carpim =",donenSonuc3);
+var donenSonuc3 = carpma(alan1, alan2); // Hesaplanan alanlar arguman olarak verildi.
+console.log("Carpim =", donenSonuc3);
+

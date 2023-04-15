@@ -12,16 +12,20 @@ const helloFuncV1 = (firstName) => { console.log(`Merhaba ${firstName}`) }
 
 helloFuncV1("helloFuncV1")
 
-const helloFuncV2 = firstName => console.log(`Merhaba ${firstName}`)
+const helloFuncV2 = firstName => console.log(`Merhaba ${firstName}`) // bir parametre bir donus islemi
+
 helloFuncV2("helloFuncV2")
 
-const helloFuncV3 = (firstName, lastName) => console.log(`Merhaba ${firstName} ${lastName}`)
+const helloFuncV3 = (firstName, lastName) => console.log(
+    `Merhaba ${firstName} ${lastName}`
+) // console log parantezi
+
 helloFuncV3("helloFuncV3", "Last name info")
 
 const helloFuncV4 = (firstName, lastName) => {
-let info = `Merhaba ${firstName} ${lastName}`
-console.log(info)
-return info
+    let info = `Merhaba ${firstName} ${lastName}`
+    console.log(info)
+    return info
 }
 
 helloFuncV4("helloFuncV4", "Other Info")
@@ -66,3 +70,29 @@ let movie = {
 
 movie.thisInArrow();
 movie.thisInRegular();
+
+// ornek 1 - Bir dizi veya film listesi parametre alan bir arrow fonksiyonumuz olsun, bunlarin her birine 1'den baslayarak alt alta yazalim
+
+const seriesList = list => {
+    list.forEach((series, index) => {
+        console.log(`${index + 1}. ${series}`)
+    }
+    );
+};
+
+seriesList(["Firefly", "The Mandalorian", "Braking Bad"]);
+
+// ornek 2 - [1,2,3,4,5] array'ini parametre alan bir arrow fonksiyonumuz olsun. Bu array'in sonucu bize yeni bir array dondursun. Olusan yeni array'deki cift sayilar 2, tek sayilar ise 3 ile carpilmis olsun. [1,2,3,4,5] => [1x3,2x2,3x3,4x2,5x3] => sonuc ciktimiz **[3,4,9,8,15]** olacak.
+
+const newArray = (nums) => {
+    const newNums = nums.map(e=>{
+        if(e%2==0){
+            return e*2
+        } else if (e%2==1){
+            return e*3
+        }
+    });
+    return newNums
+}
+
+console.log(newArray([1,2,3,4,5]));

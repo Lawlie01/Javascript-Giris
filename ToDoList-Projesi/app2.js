@@ -16,7 +16,7 @@ runEvents();
 function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded); //DOMCcontentLoaded= sayfa yüklendiğinde istediğim metodu çalıştırır.
-    secondCardBody.addEventListener("click", removeTodoToUI)
+    secondCardBody.addEventListener("click", removeTodoToUI);
 }
 
 function pageLoaded() {
@@ -28,10 +28,24 @@ function pageLoaded() {
 
 function removeTodoToUI(e){
     if(e.target.className==="fa fa-remove"){
+        // Ekrandan Silme
         const todo = e.target.parentElement.parentElement;
         todo.remove();
+
+        // Storage'dan Silme
+        removeTodoToStorage(todo.textContent);
         showAlert("info", "Todo Başarıyla Silindi")
     }
+}
+
+function removeTodoToStorage(removeTodo){
+    checkTodosFromStorage();
+    todos.forEach(function(todo,index){
+        if(removeTodo===todo){
+            todos.splice(index,1) //splice silme methodu
+        }
+    });
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function addTodo(e) {

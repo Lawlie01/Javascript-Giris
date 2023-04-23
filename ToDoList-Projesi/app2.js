@@ -7,6 +7,8 @@ const firstCardBody = document.querySelectorAll(".list-group")[0];
 const secondCardBody = document.querySelectorAll(".list-group")[1];
 const clearButton = document.querySelector("#clearButton");
 
+let todos = [];
+
 runEvents();
 
 function runEvents() {
@@ -19,7 +21,8 @@ function addTodo(e) {
         alert("Lütfen bir değer giriniz!");
     } else {
         // Arayuze Ekleme
-        addTodoToUI(inputText)
+        addTodoToUI(inputText);
+        addTodoToStorage(inputText);
     }
 
     // Storage Ekleme
@@ -37,14 +40,29 @@ function addTodoToUI(newTodo) {  //UI arayuze addTodo eklemesini sagliyor
     const li = document.createElement("li");
     li.className = "list-group-item d-flex justify-content-between";
     li.textContent = newTodo;
+
     const a = document.createElement("a");
-    a.href="#";
-    a.className="delete-item";
-    const i =document.createElement("i");
-    i.className="fa fa-remove";
+    a.href = "#";
+    a.className = "delete-item";
+    const i = document.createElement("i");
+    i.className = "fa fa-remove";
     a.appendChild(i);
     li.appendChild(a);
     todoList.appendChild(li);
 
     addInput.value = "";
-} 
+}
+
+function addTodoToStorage(newTodo) {
+    checkTodosFromStorage();
+    todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
+}
+
+function checkTodosFromStorage() {
+    if (localStorage.getItem("todos") === null) {
+        todos = [];
+    } else {
+        todos = JSON.parse(localStorage.getItem("todos"));
+    }
+}

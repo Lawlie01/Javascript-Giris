@@ -16,6 +16,7 @@ runEvents();
 function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded); //DOMCcontentLoaded= sayfa yüklendiğinde istediğim metodu çalıştırır.
+    secondCardBody.addEventListener("click", removeTodoToUI)
 }
 
 function pageLoaded() {
@@ -23,6 +24,14 @@ function pageLoaded() {
     todos.forEach(function (todo) {
         addTodoToUI(todo);
     });
+}
+
+function removeTodoToUI(e){
+    if(e.target.className==="fa fa-remove"){
+        const todo = e.target.parentElement.parentElement;
+        todo.remove();
+        showAlert("info", "Todo Başarıyla Silindi")
+    }
 }
 
 function addTodo(e) {

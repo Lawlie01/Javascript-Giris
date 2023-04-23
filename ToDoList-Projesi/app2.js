@@ -6,6 +6,7 @@ const todoList = document.querySelector(".list-group");
 const firstCardBody = document.querySelectorAll(".card-body")[0];
 const secondCardBody = document.querySelectorAll(".card-body")[1];
 const clearButton = document.querySelector("#clearButton");
+const filterInput = document.querySelector("#todoSearch")
 
 // console.log(firstCardBody);
 
@@ -18,6 +19,7 @@ function runEvents() {
     document.addEventListener("DOMContentLoaded", pageLoaded); //DOMCcontentLoaded= sayfa yüklendiğinde istediğim metodu çalıştırır.
     secondCardBody.addEventListener("click", removeTodoToUI);
     clearButton.addEventListener("click", allTodosEveryWhere);
+    filterInput.addEventListener("keyup", filter);
 }
 
 function pageLoaded() {
@@ -27,18 +29,35 @@ function pageLoaded() {
     });
 }
 
+function filter(e) {
+    const filterValue = e.target.value.toLowerCase().trim(); //toLowerCase tum degerleri kucuk harf ile isleme koyar. Buyuk kucuk harf farkliligi ortadan kalkmis olur. trim ise sag ve soldaki bosluklari temizlemek icindir.
+    const todoLists = document.querySelectorAll(".list-group-item");
+    if (todoLists.length > 0) {
+        todoLists.forEach(function (todo) {
+            if (todo.textContent.toLowerCase().trim().includes(filterValue)) {
+                //
+                todo.setAttribute("style", "display : block");
+            } else {
+                todo.setAttribute("style", "display : none !important");
+            }
+        });
+    } else {
+        showAlert("warning", "Filtreleme Yapmak İçin En Az bir Todo Olmalıdır!")
+    }
+}
+
 function allTodosEveryWhere() {
     const todoLists = document.querySelectorAll(".list-group-item");
     // Ekrandan Silme
     if (todoLists.length > 0) {
-        todoLists.forEach(function(todo){
+        todoLists.forEach(function (todo) {
             todo.remove();
         });
         // Storage'dan Silme
         todos = [];
         localStorage.setItem("todos", JSON.stringify(todos));
         showAlert("info", "Todo'lar Başarıyla Silindi.");
-    } else{
+    } else {
         showAlert("warning", "Silmek İçin En Az Bir Todo Olmalıdır!")
     }
 }

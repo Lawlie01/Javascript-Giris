@@ -7,6 +7,8 @@ const firstCardBody = document.querySelectorAll(".list-group")[0];
 const secondCardBody = document.querySelectorAll(".list-group")[1];
 const clearButton = document.querySelector("#clearButton");
 
+runEvents();
+
 function runEvents() {
     form.addEventListener("submit", addTodo);
 }

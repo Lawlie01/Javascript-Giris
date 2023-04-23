@@ -3,9 +3,11 @@
 const form = document.querySelector("#todoAddForm");
 const addInput = document.querySelector("#todoName");
 const todoList = document.querySelector(".list-group");
-const firstCardBody = document.querySelectorAll(".list-group")[0];
-const secondCardBody = document.querySelectorAll(".list-group")[1];
+const firstCardBody = document.querySelectorAll(".card-body")[0];
+const secondCardBody = document.querySelectorAll(".card-body")[1];
 const clearButton = document.querySelector("#clearButton");
+
+// console.log(firstCardBody);
 
 let todos = [];
 
@@ -18,11 +20,12 @@ function runEvents() {
 function addTodo(e) {
     const inputText = addInput.value.trim();
     if (inputText == null || inputText == "") {
-        alert("Lütfen bir değer giriniz!");
+        showAlert("warning","Lütfen Boş Bırakmayınız!")
     } else {
         // Arayuze Ekleme
         addTodoToUI(inputText);
         addTodoToStorage(inputText);
+        showAlert("success", "Todo Eklendi")
     }
 
     // Storage Ekleme
@@ -65,4 +68,19 @@ function checkTodosFromStorage() {
     } else {
         todos = JSON.parse(localStorage.getItem("todos"));
     }
+}
+
+function showAlert(type, message) {
+    // <div class="alert alert-warning" role="alert">
+    //                     This is a warning alert—check it out!
+    //                 </div>
+    const div = document.createElement("div");
+    div.className = `alert alert-${type}`;
+    div.textContent = message;
+
+    firstCardBody.appendChild(div);
+
+    setTimeout(function(){
+        div.remove();
+    }, 2500);
 }

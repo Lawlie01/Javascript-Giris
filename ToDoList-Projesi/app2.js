@@ -15,12 +15,20 @@ runEvents();
 
 function runEvents() {
     form.addEventListener("submit", addTodo);
+    document.addEventListener("DOMContentLoaded", pageLoaded); //DOMCcontentLoaded= sayfa yüklendiğinde istediğim metodu çalıştırır.
+}
+
+function pageLoaded() {
+    checkTodosFromStorage();
+    todos.forEach(function (todo) {
+        addTodoToUI(todo);
+    });
 }
 
 function addTodo(e) {
     const inputText = addInput.value.trim();
     if (inputText == null || inputText == "") {
-        showAlert("warning","Lütfen Boş Bırakmayınız!")
+        showAlert("warning", "Lütfen Boş Bırakmayınız!")
     } else {
         // Arayuze Ekleme
         addTodoToUI(inputText);
@@ -80,7 +88,7 @@ function showAlert(type, message) {
 
     firstCardBody.appendChild(div);
 
-    setTimeout(function(){
+    setTimeout(function () {
         div.remove();
     }, 2500);
 }

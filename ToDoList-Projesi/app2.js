@@ -17,6 +17,7 @@ function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded); //DOMCcontentLoaded= sayfa yüklendiğinde istediğim metodu çalıştırır.
     secondCardBody.addEventListener("click", removeTodoToUI);
+    clearButton.addEventListener("click", allTodosEveryWhere);
 }
 
 function pageLoaded() {
@@ -26,23 +27,39 @@ function pageLoaded() {
     });
 }
 
-function removeTodoToUI(e){
-    if(e.target.className==="fa fa-remove"){
+function allTodosEveryWhere() {
+    const todoLists = document.querySelectorAll(".list-group-item");
+    // Ekrandan Silme
+    if (todoLists.length > 0) {
+        todoLists.forEach(function(todo){
+            todo.remove();
+        });
+        // Storage'dan Silme
+        todos = [];
+        localStorage.setItem("todos", JSON.stringify(todos));
+        showAlert("info", "Todo'lar Başarıyla Silindi.");
+    } else{
+        showAlert("warning", "Silmek İçin En Az Bir Todo Olmalıdır!")
+    }
+}
+
+function removeTodoToUI(e) {
+    if (e.target.className === "fa fa-remove") {
         // Ekrandan Silme
         const todo = e.target.parentElement.parentElement;
         todo.remove();
 
         // Storage'dan Silme
         removeTodoToStorage(todo.textContent);
-        showAlert("info", "Todo Başarıyla Silindi")
+        showAlert("info", "Todo Başarıyla Silindi");
     }
 }
 
-function removeTodoToStorage(removeTodo){
+function removeTodoToStorage(removeTodo) {
     checkTodosFromStorage();
-    todos.forEach(function(todo,index){
-        if(removeTodo===todo){
-            todos.splice(index,1) //splice silme methodu
+    todos.forEach(function (todo, index) {
+        if (removeTodo === todo) {
+            todos.splice(index, 1) //splice silme methodu
         }
     });
     localStorage.setItem("todos", JSON.stringify(todos));
